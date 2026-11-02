@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نکات جلسه | Sofia Team</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #0b0a10;
+  --card: #15131e;
+  --purple: #b49aff;
+  --pink: #d9a6d2;
+  --white: #f7f4ff;
+  --muted: #aaa4b8;
+  --border: rgba(255,255,255,.09);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 2;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  top: -200px;
+  right: -150px;
+  background: #8659d8;
+  filter: blur(180px);
+  opacity: .15;
+  pointer-events: none;
+}
+
+.container {
+  width: min(1000px, 91%);
+  margin: auto;
+  padding: 35px 0 65px;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 22px;
+  border: 1px solid var(--border);
+  background: #ffffff05;
+  border-radius: 16px;
+}
+
+.logo {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--purple);
+}
+
+.nav-label {
+  color: var(--purple);
+  font-size: 11px;
+  border: 1px solid #b49aff55;
+  border-radius: 30px;
+  padding: 5px 13px;
+}
+
+.hero {
+  text-align: center;
+  padding: 75px 10px 55px;
+}
+
+.eyebrow {
+  color: var(--pink);
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 7vw, 58px);
+  font-weight: 900;
+  margin-top: 13px;
+  line-height: 1.6;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg,#c6aaff,#e5b4dd);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.line {
+  width: 65px;
+  height: 3px;
+  background: linear-gradient(90deg,var(--purple),var(--pink));
+  margin: 25px auto 0;
+  border-radius: 5px;
+}
+
+.section {
+  margin-top: 38px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 17px;
+}
+
+.number {
+  width: 39px;
+  height: 39px;
+  background: #b49aff20;
+  color: var(--purple);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+.section-heading h2 {
+  font-size: 18px;
+}
+
+.section-heading small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.card {
+  background: linear-gradient(145deg,#191722,#121119);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 23px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: var(--purple);
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #ded9e8;
+  font-size: 13px;
+  line-height: 2.5;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  padding-right: 20px;
+  margin-bottom: 8px;
+  color: #ded9e8;
+  font-size: 13px;
+  line-height: 2.3;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 13px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple);
+}
+
+.subcard {
+  background: #ffffff05;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.subcard h4 {
+  color: var(--pink);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  color: var(--purple);
+  background: #b49aff18;
+  border-radius: 20px;
+  padding: 3px 11px;
+  margin-bottom: 12px;
+}
+
+.highlight {
+  background: linear-gradient(110deg,#b49aff15,#d9a6d210);
+  border: 1px solid #b49aff45;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 18px 0;
+}
+
+.highlight h3 {
+  color: var(--purple);
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.highlight p {
+  color: #e3ddea;
+  font-size: 13px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.footer strong {
+  color: var(--purple);
+  letter-spacing: 2px;
+}
+
+@media(max-width:600px) {
+  .container {
+    width: 92%;
+    padding-top: 20px;
+  }
+
+  .hero {
+    padding: 55px 5px 35px;
+  }
+
+  .card {
+    padding: 17px;
+  }
+
+  .section-heading h2 {
+    font-size: 15px;
+  }
+
+  .nav-label {
+    font-size: 9px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<nav>
+  <div class="logo">SOFIA <span>TEAM.</span></div>
+  <div class="nav-label">MEETING NOTES</div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">TEAM STRATEGY & PLANNING</div>
+  <h1>نکات <span>جلسه</span></h1>
+  <p>برنامه‌ریزی محتوا، مارکتینگ، ادیت و تقسیم وظایف تیم</p>
+  <div class="line"></div>
+</header>
+
+
+<!-- CONTENT PLANNING -->
+
+<section class="section">
+
+<div class="section-heading">
+  <div class="number">01</div>
+  <div>
+    <h2>برنامه‌ریزی محتوا</h2>
+    <small>CONTENT PLANNING</small>
+  </div>
+</div>
+
+<div class="card">
+
+<h3>برنامه انتشار محتوا</h3>
+
+<ul>
+  <li>برنامه‌ی هفتگی پست جدا</li>
+  <li>استوری جدا</li>
+  <li>محتوای هدفمند داشته باشیم</li>
+  <li>کاور پست ها عوض بشه</li>
+</ul>
+
+</div>
+</section>
+
+
+<!-- SOFIA VIDEOS -->
+
+<section class="section">
+
+<div class="section-heading">
+  <div class="number">02</div>
+  <div>
+    <h2>ویدیوهای سوفیا</h2>
+    <small>SOFIA VIDEO CONTENT</small>
+  </div>
+</div>
+
+<div class="card">
+
+<h3>برنامه هفتگی ویدیوها</h3>
+
+<div class="subcard">
+  <h4>ویدیوی اصلی</h4>
+  <ul>
+    <li>ودیو سوفیا هفته ای یک ویدیو یک تا دو دقیقه</li>
+  </ul>
+</div>
+
+<div class="subcard">
+  <h4>ویدیوهای کوتاه</h4>
+  <ul>
+    <li>دوتا ویدیو کوتاه day in my life</li>
+    <li>پنج تا نکته که کمک میکنه از سابلیمینال نتیجه بگیری</li>
+    <li>چجوری من از سابلیمینال خودم نتیجه دیدم</li>
+    <li>چجوری قدم رو بلند کردم و …</li>
+  </ul>
+</div>
+
+<div class="subcard">
+  <h4>سبک اجرای ویدیو</h4>
+  <ul>
+    <li>ویس اور - صحبت تو ویدیو برای سوفیا</li>
+  </ul>
+</div>
+
+</div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+
+<section class="section">
+
+<div class="section-heading">
+  <div class="number">03</div>
+  <div>
+    <h2>محتوای رضایت و تغییرات</h2>
+    <small>TESTIMONIALS & RESULTS</small>
+  </div>
+</div>
+
+<div class="card">
+
+<h3>سه تا ویدیو رضایت / AI / تغییرات قبل و بعد</h3>
+
+<ul>
+  <li>سه تا ویدیو رضایت / ai / تغییرات قبل و بعد / چند تا رضایت تو یک پست / اسکرین شات چت /</li>
+</ul>
+
+</div>
+</section>
+
+
+<!-- MARKETING -->
+
+<section class="section">
+
+<div class="section-heading">
+  <div class="number">04</div>
+  <div>
+    <h2>مارکتینگ و ایده‌پردازی</h2>
+    <small>MARKETING STRATEGY</small>
+  </div>
+</div>
+
+<div class="card">
+
+<h3>وظایف ادمین مارکتینگ</h3>
+
+<ul>
+  <li>ادمین مارکتنیگ برنامه ریزی بکنه چه هوک ها و چه موضوعاتی هر هفته اپلود بشه</li>
+  <li>یک نفر برنامه ریزی محتوا بکنه / هوک ها رو پیدا کنه / ترند ها رو پیدا بکنه</li>
+</ul>
+
+</div>
+</section>
+
+
+<!-- EDITING -->
+
+<section class="section">
+
+<div class="section-heading">
+  <div class="number">05</div>
+  <div>
+    <h2>برنامه ادیت ویدیو</h2>
+    <small>EDITING MANAGEMENT</small>
+  </div>
+</div>
+
+<div class="card">
+
+<h3>برنامه روزانه ادیت</h3>
+
+<ul>
+  <li>یک ادیت ویدیو هر روز از ادمین های ادیت بگیریم و ۵-۱۰ تا ادیت استوری</li>
+</ul>
+
+<div class="subcard">
+  <h4>تقسیم مسئولیت ادیت</h4>
+  <ul>
+    <li>یک نفر مسئول ادیت ویدیو های سوفیا باشه</li>
+    <li>یک نفر مسئول ادیت های رضایت ها باشه</li>
+    <li>یک نفر مخصوص پست</li>
+  </ul>
+</div>
+
+<div class="subcard">
+  <h4>ضبط ویدیوهای سوفیا</h4>
+  <ul>
+    <li>از سوفیا ریکورد هفتگی بگیریم سه تا در هفته و تقسیمات مشخص داشته باشه</li>
+  </ul>
+</div>
+
+</div>
+</section>
+
+
+<!-- PUBLISHING -->
+
+<section class="section">
+
+<div class="section-heading">
+  <div class="number">06</div>
+  <div>
+    <h2>آپلود و انتشار محتوا</h2>
+    <small>PUBLISHING MANAGEMENT</small>
+  </div>
+</div>
+
+<div class="card">
+
+<h3>مسئولیت انتشار</h3>
+
+<ul>
+  <li>یک نفر اپلود بکنه سر تایم تمام این محتوا هارو و از Edits استفاده بکنه !</li>
+</ul>
+
+</div>
+</section>
+
+
+<!-- RECRUITMENT -->
+
+<section class="section">
+
+<div class="section-heading">
+  <div class="number">07</div>
+  <div>
+    <h2>استخدام و جذب نیرو</h2>
+    <small>TEAM RECRUITMENT</small>
+  </div>
+</div>
+
+<div class="card">
+
+<h3>آگهی استخدامی</h3>
+
+<ul>
+  <li>آگهی استخدامی میخوایم برای پست پ استوری و مارکتینگ</li>
+</ul>
+
+</div>
+</section>
+
+
+<!-- WORK HOURS -->
+
+<section class="section">
+
+<div class="section-heading">
+  <div class="number">08</div>
+  <div>
+    <h2>زمان کاری تیم</h2>
+    <small>WORK SCHEDULE</small>
+  </div>
+</div>
+
+<div class="highlight">
+  <h3>مدت زمان فعالیت</h3>
+  <p>نفری ۳ ساعت کار کنین کافیه</p>
+</div>
+
+</section>
+
+
+<footer class="footer">
+  <strong>SOFIA TEAM</strong>
+  <p>CONTENT • MARKETING • EDITING • GROWTH</p>
+  <p>INTERNAL MEETING NOTES</p>
+</footer>
+
+</div>
+
+</body>
+</html>
